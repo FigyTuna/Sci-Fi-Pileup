@@ -1,0 +1,486 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Race.gd" type="Script" id=1]
+[ext_resource path="res://track.png" type="Texture" id=2]
+[ext_resource path="res://Road.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Checkpoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://dark.png" type="Texture" id=5]
+[ext_resource path="res://dark2.png" type="Texture" id=6]
+[ext_resource path="res://Car.tscn" type="PackedScene" id=7]
+[ext_resource path="res://lights.png" type="Texture" id=8]
+[ext_resource path="res://PlayerController.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Camera2D.gd" type="Script" id=10]
+[ext_resource path="res://AIController.tscn" type="PackedScene" id=11]
+[ext_resource path="res://DungeonExplore.ogg" type="AudioStream" id=12]
+[ext_resource path="res://record.wav" type="AudioStream" id=13]
+[ext_resource path="res://cp.wav" type="AudioStream" id=14]
+[ext_resource path="res://go.wav" type="AudioStream" id=15]
+
+[node name="Race" type="Node2D"]
+script = ExtResource( 1 )
+checkpoint_paths = [ NodePath("Checkpoints/Checkpoint"), NodePath("Checkpoints/Checkpoint2"), NodePath("Checkpoints/Checkpoint3"), NodePath("Checkpoints/Checkpoint4"), NodePath("Checkpoints/Checkpoint5"), NodePath("Checkpoints/Checkpoint6"), NodePath("Checkpoints/Checkpoint7"), NodePath("Checkpoints/Checkpoint8") ]
+player_path = NodePath("Player")
+opponent_paths = [ NodePath("Car1"), NodePath("Car2"), NodePath("Car3"), NodePath("Car4"), NodePath("Car5"), NodePath("Car6"), NodePath("Car7"), NodePath("Car8"), NodePath("Car9"), NodePath("Car10"), NodePath("Car11"), NodePath("Car12"), NodePath("Car13"), NodePath("Car14"), NodePath("Car15"), NodePath("Car16"), NodePath("Car17"), NodePath("Car18"), NodePath("Car19"), NodePath("Car20"), NodePath("Car21"), NodePath("Car22"), NodePath("Car23"), NodePath("Car24"), NodePath("Car25"), NodePath("Car26"), NodePath("Car27"), NodePath("Car28"), NodePath("Car29") ]
+
+[node name="Track" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="Track"]
+position = Vector2( 4020.39, 751.05 )
+scale = Vector2( 4.25702, 4.25702 )
+texture = ExtResource( 2 )
+
+[node name="Road" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 688.37, 728.246 )
+scale = Vector2( 7.46433, 31.4633 )
+
+[node name="Road8" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 7358.22, 728.246 )
+scale = Vector2( 7.09627, 31.4633 )
+
+[node name="Road3" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 1629.03, -767.365 )
+scale = Vector2( 15.3478, 8.26949 )
+
+[node name="Road10" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 6465.9, -760.693 )
+scale = Vector2( 15.2282, 8.45937 )
+
+[node name="Road6" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 6473.26, 2304.67 )
+scale = Vector2( 14.2487, 7.0471 )
+
+[node name="Road12" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 1661.16, 2305.29 )
+scale = Vector2( 15.0866, 7.36022 )
+
+[node name="Road2" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 938.896, -520.759 )
+rotation = -0.803036
+scale = Vector2( 16.4669, 6.17143 )
+
+[node name="Road9" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 7115.36, -518.832 )
+rotation = 0.848358
+scale = Vector2( 16.1557, 6.20098 )
+
+[node name="Road13" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 923.884, 2023.88 )
+rotation = 0.83699
+scale = Vector2( 17.3001, 6.13691 )
+
+[node name="Road7" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 7135.02, 2025.39 )
+rotation = -0.857018
+scale = Vector2( 16.3664, 5.86032 )
+
+[node name="Road4" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 4084.52, 749.852 )
+rotation = 0.657145
+scale = Vector2( 82.9098, 7.46536 )
+
+[node name="Road11" parent="Track" instance=ExtResource( 3 )]
+position = Vector2( 4046.49, 749.852 )
+rotation = -0.654243
+scale = Vector2( 82.962, 6.59621 )
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 912.269, -494.792 )
+rotation = 0.769901
+scale = Vector2( 2.20015, 2.20015 )
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 2437.03, -513.945 )
+rotation = 2.23046
+scale = Vector2( 2.20015, 2.20015 )
+
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 5785.29, 2087.82 )
+rotation = 2.27855
+scale = Vector2( 2.20015, 2.20015 )
+
+[node name="Checkpoint4" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 7134.95, 2039.92 )
+rotation = 0.711005
+scale = Vector2( 2.20015, 2.20015 )
+
+[node name="Checkpoint5" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 7152.51, -477.203 )
+rotation = -0.77181
+scale = Vector2( 2.20015, 2.20015 )
+
+[node name="Checkpoint6" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 5705.58, -516.652 )
+rotation = -2.28091
+scale = Vector2( 2.20015, 2.20015 )
+
+[node name="Checkpoint7" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 2383.15, 2044.43 )
+rotation = -2.23605
+scale = Vector2( 2.20015, 2.20015 )
+
+[node name="Checkpoint8" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 918.981, 2018.7 )
+rotation = -0.766643
+scale = Vector2( 2.20015, 2.20015 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_left = -642.312
+margin_top = -2006.14
+margin_right = 8312.69
+margin_bottom = -1438.14
+texture = ExtResource( 5 )
+patch_margin_left = 20
+patch_margin_top = 5
+patch_margin_right = 20
+patch_margin_bottom = 5
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+margin_left = -557.453
+margin_top = 2905.91
+margin_right = 8397.55
+margin_bottom = 3473.91
+texture = ExtResource( 5 )
+patch_margin_left = 20
+patch_margin_top = 5
+patch_margin_right = 20
+patch_margin_bottom = 5
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="."]
+margin_left = -598.161
+margin_top = -1869.51
+margin_right = 88.8391
+margin_bottom = 3181.49
+texture = ExtResource( 5 )
+patch_margin_left = 5
+patch_margin_top = 20
+patch_margin_right = 5
+patch_margin_bottom = 20
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="."]
+margin_left = 7976.89
+margin_top = -1865.87
+margin_right = 8662.89
+margin_bottom = 3185.13
+texture = ExtResource( 5 )
+patch_margin_left = 5
+patch_margin_top = 20
+patch_margin_right = 5
+patch_margin_bottom = 20
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="."]
+margin_left = 8324.18
+margin_top = -1783.83
+margin_right = 12765.2
+margin_bottom = 6002.17
+texture = ExtResource( 6 )
+patch_margin_left = 5
+patch_margin_top = 20
+patch_margin_right = 5
+patch_margin_bottom = 20
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="."]
+margin_left = -4287.0
+margin_top = 3209.0
+margin_right = 12765.0
+margin_bottom = 6003.0
+texture = ExtResource( 6 )
+patch_margin_left = 5
+patch_margin_top = 20
+patch_margin_right = 5
+patch_margin_bottom = 20
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="."]
+margin_left = -4287.0
+margin_top = -4370.0
+margin_right = -226.0
+margin_bottom = 6003.0
+texture = ExtResource( 6 )
+patch_margin_left = 5
+patch_margin_top = 20
+patch_margin_right = 5
+patch_margin_bottom = 20
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="."]
+margin_left = -4287.0
+margin_top = -4370.0
+margin_right = 12774.0
+margin_bottom = -1773.0
+texture = ExtResource( 6 )
+patch_margin_left = 5
+patch_margin_top = 20
+patch_margin_right = 5
+patch_margin_bottom = 20
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 787.233, 1813.08 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Player"]
+position = Vector2( -4.43622, -766.104 )
+z_index = -1
+amount = 3
+lifetime = 44.02
+speed_scale = 7.66
+randomness = 1.0
+texture = ExtResource( 8 )
+emission_shape = 1
+emission_sphere_radius = 14.3
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 1.0
+angular_velocity = 30.0
+angular_velocity_random = 1.0
+scale_amount = 10.0
+scale_amount_random = 0.5
+hue_variation = 0.3
+hue_variation_random = 1.0
+
+[node name="Controller" parent="Player" instance=ExtResource( 9 )]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 0, -200 )
+rotating = true
+current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
+smoothing_speed = 9.0
+drag_margin_left = 0.5
+drag_margin_top = 0.5
+drag_margin_right = 0.5
+drag_margin_bottom = 0.5
+script = ExtResource( 10 )
+
+[node name="Node2D" type="Node2D" parent="Player/Camera2D"]
+position = Vector2( -382.38, -249.918 )
+scale = Vector2( 2, 2 )
+
+[node name="Label" type="Label" parent="Player/Camera2D/Node2D"]
+margin_left = -61.2043
+margin_top = -15.3863
+margin_right = 65.7957
+margin_bottom = 15.6137
+text = "  Lap: 00:00 / Best: 99:99
+Best 3 laps in a row: 99:99"
+
+[node name="Car1" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 626.194, 1484.4 )
+
+[node name="Controller" parent="Car1" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint")
+
+[node name="Car2" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 2664.85, -122.527 )
+
+[node name="Controller" parent="Car2" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint3")
+
+[node name="Car3" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 4127.93, 984.265 )
+
+[node name="Controller" parent="Car3" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car4" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 4174.3, 1027.54 )
+
+[node name="Controller" parent="Car4" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car5" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 6818.81, 2485.15 )
+
+[node name="Controller" parent="Car5" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint4")
+
+[node name="Car6" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 7276.95, -326.353 )
+
+[node name="Controller" parent="Car6" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint5")
+
+[node name="Car7" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 1920.44, 2482.4 )
+
+[node name="Controller" parent="Car7" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint8")
+
+[node name="Car8" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 4014.65, 1016.99 )
+
+[node name="Controller" parent="Car8" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint3")
+
+[node name="Car9" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 7181.83, 1972.98 )
+
+[node name="Controller" parent="Car9" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint5")
+
+[node name="Car10" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 7229.07, 1725.92 )
+
+[node name="Controller" parent="Car10" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint5")
+
+[node name="Car11" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 7095.91, 1819.76 )
+
+[node name="Controller" parent="Car11" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint5")
+
+[node name="Car12" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 7051.52, 1997.32 )
+
+[node name="Controller" parent="Car12" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint5")
+
+[node name="Car13" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 7317.82, 2052.47 )
+
+[node name="Controller" parent="Car13" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint5")
+
+[node name="Car14" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 3666.9, 1278.42 )
+
+[node name="Controller" parent="Car14" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car15" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 3783.66, 1179.1 )
+
+[node name="Controller" parent="Car15" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car16" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 3523.7, 1381.66 )
+
+[node name="Controller" parent="Car16" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car17" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 3341.31, 1509.98 )
+
+[node name="Controller" parent="Car17" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car18" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 2622.36, 2068.86 )
+
+[node name="Controller" parent="Car18" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car19" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 3080.83, 1699.99 )
+
+[node name="Controller" parent="Car19" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car20" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 2994.18, 1795.56 )
+
+[node name="Controller" parent="Car20" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car21" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 2868.19, 1876.98 )
+
+[node name="Controller" parent="Car21" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car22" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 3209.07, 1629.31 )
+
+[node name="Controller" parent="Car22" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car23" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 2733.21, 1982.86 )
+
+[node name="Controller" parent="Car23" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car24" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 4498.27, 629.953 )
+
+[node name="Controller" parent="Car24" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car25" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 4498.27, 629.953 )
+
+[node name="Controller" parent="Car25" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car26" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 4266.3, 847.241 )
+
+[node name="Controller" parent="Car26" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car27" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 4389.62, 718.043 )
+
+[node name="Controller" parent="Car27" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car28" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 4721.43, 462.582 )
+
+[node name="Controller" parent="Car28" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="Car29" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 4606.91, 553.608 )
+
+[node name="Controller" parent="Car29" instance=ExtResource( 11 )]
+next_cp_path = NodePath("../../Checkpoints/Checkpoint7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+
+[node name="record" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -10.0
+
+[node name="cp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -20.0
+
+[node name="go" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -11.0
